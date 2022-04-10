@@ -53,10 +53,10 @@ export class MusicDataService {
   }
   
   removeFromFavourites(id:string): Observable<any> {
-    return this.http.delete<[String]>(`${environment.userAPIBase}/favourites/${id}`).pipe(mergeMap(favouritesArray => {
-      if (favouritesArray.length > 0) {
+    return this.http.delete<[String]>(`${environment.userAPIBase}/favourites/${id}`).pipe(mergeMap((favouritesArray : any) => {
+      if (favouritesArray.data.length > 0) {
         return this.spotifyToken.getBearerToken().pipe(mergeMap(token=>{
-          return this.http.get<any>("https://api.spotify.com/v1/tracks?ids=" + favouritesArray.join(),
+          return this.http.get<any>("https://api.spotify.com/v1/tracks?ids=" + favouritesArray.data.join(),
                                     { headers: { "Authorization": `Bearer ${token}` } });
         }));
       } else {
