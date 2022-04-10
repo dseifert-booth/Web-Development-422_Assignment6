@@ -7,16 +7,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class InterceptTokenService implements HttpInterceptor {
-
-  // Initialization
-
   constructor(private a: AuthService) { }
 
-  // Methods
-
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    
-    // Clone the existing request, and add the authorization header
     if (!request.url.includes("spotify.com")) {
       request = request.clone({
         setHeaders: {
@@ -24,8 +17,6 @@ export class InterceptTokenService implements HttpInterceptor {
         }
       });
     }
-    // Pass the request on to the next handler
     return next.handle(request);
   }
-
 }
