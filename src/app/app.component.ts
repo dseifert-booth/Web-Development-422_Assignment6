@@ -1,12 +1,16 @@
 /*********************************************************************************
-* WEB422 – Assignment 05
+* WEB422 – Assignment 06
 * I declare that this assignment is my own work in accordance with Seneca Academic Policy. No part of this
 * assignment has been copied manually or electronically from any other source (including web sites) or
 * distributed to other students.
 *
-* Name: Darius Seifert Booth Student ID: 109908202 Date: 3/23/2022
+* Name: Darius Seifert Booth Student ID: 109908202 Date: 4/9/2022
 *
-********************************************************************************/
+* Angular App (Deployed) Link: http://dseifertbooth-web422.com/
+*
+* User API (Heroku) Link: https://dseifert-booth--web422.herokuapp.com/
+*
+********************************************************************************/ 
 
 import { Component, OnInit } from '@angular/core';
 import { Event, NavigationStart, Router } from '@angular/router';
