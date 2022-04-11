@@ -8,7 +8,7 @@ import RegisterUser from '../RegisterUser';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  registerUser : RegisterUser = { username: "", password: "", password2: "" };
+  registerUser : RegisterUser = { userName: "", password: "", password2: "" };
   warning : String = "";
   success : boolean = false;
   loading : boolean = false;
@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if (this.registerUser.username != "" &&
+    if (this.registerUser.userName != "" &&
         this.registerUser.password != "" &&
         this.registerUser.password2 != "") {
       this.loading = true;

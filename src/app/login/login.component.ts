@@ -9,7 +9,7 @@ import User from '../User';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  user : User = {username: "", password: "", _id: ""};
+  user : User = {userName: "", password: "", _id: ""};
   warning : String = "";
   loading : boolean = false;
 
@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if (this.user.username != "" &&
+    if (this.user.userName != "" &&
         this.user.password != "") {
       this.loading = true;
       this._authService.login(this.user)
